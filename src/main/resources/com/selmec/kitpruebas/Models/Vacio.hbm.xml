@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.selmec.kitpruebas.Models.Vacio" table="vacio" catalog="kitpruebas" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="foreign">
+                <param name="property">prueba</param>
+            </generator>
+        </id>
+        <one-to-one name="prueba" class="com.selmec.kitpruebas.Models.Prueba" constrained="true"></one-to-one>
+        <property name="proteccion" type="boolean">
+            <column name="proteccion" not-null="true" />
+        </property>
+        <property name="presion" type="boolean">
+            <column name="presion" not-null="true" />
+        </property>
+        <property name="temperatura" type="boolean">
+            <column name="temperatura" not-null="true" />
+        </property>
+        <property name="sobrevelocidad" type="boolean">
+            <column name="sobrevelocidad" not-null="true" />
+        </property>
+        <property name="ajustevoltaje" type="boolean">
+            <column name="ajustevoltaje" not-null="true" />
+        </property>
+        <property name="ajustehz" type="boolean">
+            <column name="ajustehz" not-null="true" />
+        </property>
+        <property name="fugas" type="boolean">
+            <column name="fugas" not-null="true" />
+        </property>
+        <property name="fugaescape" type="boolean">
+            <column name="fugaescape" not-null="true" />
+        </property>
+        <property name="fases" type="boolean">
+            <column name="fases" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

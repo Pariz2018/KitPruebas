@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!--    <property name="hibernate.connection.url">jdbc:mysql://10.82.10.105:3306/test?zeroDateTimeBehavior=convertToNull</property>-->
+    <property name="hibernate.connection.url">jdbc:mysql://149.28.55.138:3306/kitpruebas?zeroDateTimeBehavior=convertToNull</property>
+    <!--    <property name="hibernate.connection.url">jdbc:mysql://192.168.1.85:3306/test?zeroDateTimeBehavior=convertToNull</property>-->
+    <property name="hibernate.connection.username">test</property>
+    <property name="hibernate.connection.password">TEST@zbg.com</property>
+    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.connection.pool_size">5</property>
+    <property name="hibernate.cache.use_second_level_cache">false</property>
+    <mapping resource="com/selmec/kitpruebas/Models/Lecturas.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Cariles.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Instalacion.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Vacio.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Incidencias.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Planta.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Usuarios.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Ubicaciones.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Motores.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Prueba.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Iteraciones.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Arranque.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Clientes.hbm.xml"/>
+    <mapping resource="com/selmec/kitpruebas/Models/Ensamble.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

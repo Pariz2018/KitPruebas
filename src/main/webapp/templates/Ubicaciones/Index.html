@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    <a href="#/Ubicaciones/Create" class="btn btn-primary">Agregar</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Poblacion</th>
+                <th>Estado</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>                                
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in ubicaciones">
+                <td><a href="#/Ubicaciones/Edit/{{row.id}}">{{row.poblacion}}</a></td>
+                <td>{{row.estado}}</td>
+                <td>{{row.telefono}}</td>
+                <td>
+                    <button class="btn btn-danger">Borrar</button>
+                </td>                          
+            </tr>
+        </tbody>
+    </table>
+</div>

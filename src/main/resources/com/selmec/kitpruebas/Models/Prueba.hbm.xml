@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.selmec.kitpruebas.Models.Prueba" table="prueba" catalog="kitpruebas" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ensamble" class="com.selmec.kitpruebas.Models.Ensamble" fetch="select">
+            <column name="EnsambleID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="incidencias" class="com.selmec.kitpruebas.Models.Incidencias" fetch="select">
+            <column name="IncidenciaID" length="45" />
+        </many-to-one>
+        <property name="tipo" type="int">
+            <column name="Tipo" not-null="true" />
+        </property>
+        <property name="estatus" type="int">
+            <column name="Estatus" not-null="true" />
+        </property>
+        <property name="dtInicio" type="timestamp">
+            <column name="dtInicio" length="19" not-null="true" />
+        </property>
+        <property name="dtFin" type="timestamp">
+            <column name="dtFin" length="19" not-null="true" />
+        </property>
+        <property name="comentario" type="string">
+            <column name="Comentario" length="250" />
+        </property>
+        <property name="aprueba" type="java.lang.Integer">
+            <column name="Aprueba" />
+        </property>
+        <property name="dtAprueba" type="timestamp">
+            <column name="dtAprueba" length="19" />
+        </property>
+        <property name="apruebaSupervisor" type="java.lang.Integer">
+            <column name="ApruebaSupervisor" />
+        </property>
+        <property name="dtApruebaSupervisor" type="timestamp">
+            <column name="dtApruebaSupervisor" length="19" />
+        </property>
+        <one-to-one name="vacio" class="com.selmec.kitpruebas.Models.Vacio"></one-to-one>
+        <one-to-one name="instalacion" class="com.selmec.kitpruebas.Models.Instalacion"></one-to-one>
+        <one-to-one name="arranque" class="com.selmec.kitpruebas.Models.Arranque"></one-to-one>
+        <set name="lecturases" table="lecturas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PruebaID" />
+            </key>
+            <one-to-many class="com.selmec.kitpruebas.Models.Lecturas" />
+        </set>
+    </class>
+</hibernate-mapping>

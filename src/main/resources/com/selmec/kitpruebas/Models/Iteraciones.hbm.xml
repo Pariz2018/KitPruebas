@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.selmec.kitpruebas.Models.Iteraciones" table="iteraciones" catalog="kitpruebas" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="foreign">
+                <param name="property">lecturas</param>
+            </generator>
+        </id>
+        <one-to-one name="lecturas" class="com.selmec.kitpruebas.Models.Lecturas" constrained="true"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal" role="form" name="formPlanta" ng-submit="submit()">   
+            <div class="row">
+                <div class="col-md-12" style="background-color: #EDEFEE">                    
+                    <fieldset>            
+                        <legend>
+                            Datos Generales de la Planta de Emergencia                                                        
+                        </legend>
+                        <div class="row">
+                            <div class="col-md-4">                             
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        No Cliente                                      
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="ensamble.ubicaciones.clientes.noCliente" name="noCliente" placeholder="noCliente">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Cliente                                      
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="ensamble.ubicaciones.clientes.razonSocial" name="razonSocial" placeholder="Cliente">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        No.OP                                     
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="planta.noOP" name="noOP">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        No. OV                                       
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="planta.noOV" name="noOV">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">                                
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Lugar de Instalación
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="ensamble.ubicaciones.ubicacion" name="Ubicacion">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Población
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="ensamble.ubicaciones.poblacion" name="Poblacion">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Entidad
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="ensamble.ubicaciones.estado" name="estado">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Teléfono
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required ng-model="ensamble.ubicaciones.telefono" name="telefono">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">                               
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Persona que atendió a técnico                                       
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" ng-model="ensamble.recibio" required name="recibio">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        Nombre de Técnico                                     
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" ng-model="ensamble.tecnico" required name="tecnico">
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </fieldset>                    
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-primary" type="submit" ng-disabled="formPlanta.$invalid">
+                        Guardar y Comenzar las Pruebas
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

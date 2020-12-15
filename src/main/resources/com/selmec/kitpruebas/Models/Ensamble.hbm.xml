@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.selmec.kitpruebas.Models.Ensamble" table="ensamble" catalog="kitpruebas" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cariles" class="com.selmec.kitpruebas.Models.Cariles" fetch="select">
+            <column name="CarrilID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="planta" class="com.selmec.kitpruebas.Models.Planta" fetch="select">
+            <column name="PlantaID" length="50" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ubicaciones" class="com.selmec.kitpruebas.Models.Ubicaciones" fetch="select">
+            <column name="UbicacionId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarios" class="com.selmec.kitpruebas.Models.Usuarios" fetch="select">
+            <column name="UsuarioID" not-null="true" />
+        </many-to-one>
+        <property name="folio" type="string">
+            <column name="Folio" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="dtCreacion" type="timestamp">
+            <column name="dtCreacion" length="19" not-null="true" />
+        </property>
+        <property name="recibio" type="string">
+            <column name="Recibio" length="100" not-null="true" />
+        </property>
+        <property name="tecnico" type="string">
+            <column name="Tecnico" length="100" not-null="true" />
+        </property>
+        <set name="pruebas" table="prueba" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EnsambleID" not-null="true" />
+            </key>
+            <one-to-many class="com.selmec.kitpruebas.Models.Prueba" />
+        </set>
+    </class>
+</hibernate-mapping>

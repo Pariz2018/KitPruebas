@@ -1,0 +1,25 @@
+<div class="col-md-12">
+    <a href="#/Clientes/Create" class="btn btn-primary">Agregar</a>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>No Cliente</th>
+                <th>Razon Social</th>                                
+                <th>RFC</th>
+                <th>Acciones</th>
+
+            </tr>                                
+        </thead>
+        <tbody>
+            <tr ng-repeat="cliente in clientes">
+                <td><a href="#/Clientes/Edit/{{cliente.id}}">{{cliente.noCliente}}</a></td>                
+                <td>{{cliente.razonSocial}}</td>
+                <td>{{cliente.rfc}}</td>
+                <td>
+                    <button class="btn btn-danger">Borrar</button>
+                </td>                          
+            </tr>
+        </tbody>
+    </table>
+</div>
